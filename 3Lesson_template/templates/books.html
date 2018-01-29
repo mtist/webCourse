@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Books</title>
-</head>
-<body>
-    <h2>Current book is "{{bname}}"</h2>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %} Книги {% endblock %}
+
+{% block content %}
+    <h2>{{bname}}</h2>
+{% endblock %}
