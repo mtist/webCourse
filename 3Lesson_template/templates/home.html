@@ -7,8 +7,13 @@
 <body>
     <h2>{{ author }}</h2>
     {% for book in books %}
-        <h3>Название: {{ book.title }}</h3>
-        <p>Страницы: {{ book.pages }}</p>
+        {% if book.title|length > 18 %}
+            <h4>Название: {{ book.title }}</h4>
+            <h4>Страницы: {{ book.pages }}</h4>
+        {% else %}
+            <h3>Название: {{ book.title }}</h3>
+            <h3>Страницы: {{ book.pages }}</h3>
+        {% endif %}
     {% endfor %}
 </body>
 </html>
