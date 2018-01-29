@@ -5,7 +5,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "hello world"
+    return render_template("home.html")
+
+
+@app.route("/books/")
+def books():
+    book_name = "Архитектура компьютера"
+    return render_template("books.html", bname = book_name)
 
 
 @app.route("/contact/")
