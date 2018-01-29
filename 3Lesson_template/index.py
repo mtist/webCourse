@@ -5,7 +5,20 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    context = {
+        "author":"Тененбаум",
+        "books": [
+            {
+                "title": "Архитектура компьютера",
+                "pages": 820
+            },
+            {
+                "title": "Компьютерные сети",
+                "pages": 1020
+            },
+        ]
+    }
+    return render_template("home.html", **context)
 
 
 @app.route("/books/")

@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <h2>Hello world!</h2>
+    <h2>{{ author }}</h2>
+    {% for book in books %}
+        <h3>Название: {{ book.title }}</h3>
+        <p>Страницы: {{ book.pages }}</p>
+    {% endfor %}
 </body>
 </html>
