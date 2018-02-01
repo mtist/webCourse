@@ -54,23 +54,25 @@ def my():
 @app.route('/authors/')
 def authors():
     authors = {
-        'Tenenbaum':  {
+        'authors': [
+        {
             'author': 'Тененбаум',
             'books': 5,
             'genre': 'Компьютерная литература'
         },
-        "Scott Card": {
+        {
             'author': 'Орсон Скотт Кард',
             'books': 32,
             'genre': 'science fiction'
         },
-        "MagaUchHoz": {
+        {
             'author': 'Мага с учхоза',
             'books': 'infinity',
             'genre': 'all genres'
         }
-    }
+    ]}
     return render_template('authors.html', **authors)
+
 
 @app.route('/contact/')
 @app.route('/contact/<phone>')
@@ -78,6 +80,9 @@ def contact(phone=None):
     if phone is None:
         phone = '656565'
     return 'Мой телефон ' + phone
+
+
+# @app.route('/ /')
 
 
 if __name__ == '__main__':
