@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} Authors {% endblock %}
+
+{% block content %}
+    {% for author in authors %}
+        <h3>Автор: {{ author.author }}</h3>
+        <p>Количество книг: {{ author.books }}</p>
+        <p>Жанр: {{ author.genre }}</p>
+    {% endfor %}
+{% endblock %}
