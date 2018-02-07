@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} list {% endblock %}
+
+{% block content %}
+
+{% for person in persons %}
+    <div>
+        <h3>{{ person.name}} {{person.year}} лет {% if person.male %} Мужчина {% else %} Женщина {% endif %}</h3>
+    </div>
+{% endfor %}
+
+{% endblock %}
